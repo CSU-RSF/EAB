@@ -36,7 +36,7 @@ namespace EAB
                 FontSize = 17
             };
             Label paragraphTwo = new Label {
-                Text = "All species of \"true\" ash trees are at risk of being killed by EAB. In Colorado, ash trees comprise 15 percent or more of all trees and can be found in most communities.",
+                Text = "All species of \"true\" ash trees are at risk of being killed by EAB. In Colorado, ash trees comprise 15% or more of all urban and community trees and can be found in most cities and towns.",
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
                 FontSize = 17
             };
