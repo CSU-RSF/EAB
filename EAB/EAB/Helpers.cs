@@ -44,7 +44,7 @@ namespace EAB.Helpers
             };
             backImage.GestureRecognizers.Add(backGestureRecognizer);
 
-            Label title = new Label { Text = "EAB/ASH TREE ID", FontFamily = Device.OnPlatform("Montserrat-Medium", "Montserrat-Medium.ttf#Montserrat-Medium", null), TextColor = Color.White, FontSize = 25, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center };
+            Label title = new Label { Text = "EAB/ASH TREE ID", FontFamily = Device.OnPlatform("Montserrat-Medium", "Montserrat-Medium.ttf#Montserrat-Medium", null), TextColor = Color.White, FontSize = 20, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center };
 
             // Construct home button and add gesture recognizer
             Image homeImage = new Image {
