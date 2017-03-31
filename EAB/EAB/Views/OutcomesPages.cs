@@ -49,36 +49,16 @@ namespace EAB
             };
             EABInfoButton.Clicked += ToMoreEABInfo;
 
+            // Add CSFS and CSU buttons/links
+            Grid buttonGroup = ConstructButtonGroup();
+
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
             paragraphText.Children.Add(EABInfoButton);
-
-
-
-            // Instantiate Views
-            var CSFS = new ImageButton() { Image = "csfs.png", BackgroundColor = Color.Transparent };
-            var CSU = new ImageButton() { Image = "csu_extension.png", BackgroundColor = Color.Transparent };
-            Grid buttonGroup = new Grid { ColumnSpacing = 20 };
-
-            // Set bindings
-            CSFS.SetBinding(ImageButton.CommandProperty, new Binding("NavigationCommand"));
-
-            // Set properties for desired design
-            buttonGroup.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
-            buttonGroup.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-            buttonGroup.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-
-            // Add views to hierarchy
-            buttonGroup.Children.Add(CSFS, 0, 0);
-            buttonGroup.Children.Add(CSU, 1, 0);
-
-            // Add paragrah to grid layout
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(paragraphText, 0, 2);
-
-
 
             // Add grid layout to absolute layout and assign to Content
             pageLayout.Children.Add(gridLayout, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
@@ -131,10 +111,14 @@ namespace EAB
             };
             EABInfoButton.Clicked += ToMoreEABInfo;
 
+            // Add CSFS and CSU buttons/links
+            Grid buttonGroup = ConstructButtonGroup();
+
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
             paragraphText.Children.Add(EABInfoButton);
+            paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(paragraphText, 0, 2);
 
@@ -188,10 +172,14 @@ namespace EAB
             };
             EABInfoButton.Clicked += ToMoreEABInfo;
 
+            // Add CSFS and CSU buttons/links
+            Grid buttonGroup = ConstructButtonGroup();
+
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
             paragraphText.Children.Add(EABInfoButton);
+            paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(paragraphText, 0, 2);
 

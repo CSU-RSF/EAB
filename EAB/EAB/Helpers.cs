@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
+using XLabs.Forms.Controls;
 
 namespace EAB.Helpers
 {
@@ -122,6 +122,30 @@ namespace EAB.Helpers
             return listView;
         }
 
+        // Button Group
+        public Grid ConstructButtonGroup()
+        {
+            // Create CSFS and CSU Buttons
+            var CSFS = new ImageButton() { Image = "csfs.png", BackgroundColor = Color.Transparent };
+            var CSU = new ImageButton() { Image = "csu_extension.png", BackgroundColor = Color.Transparent };
+            Grid buttonGroup = new Grid { ColumnSpacing = 20 };
+
+            // Set navigation
+            CSFS.Clicked += ToCSFS;
+            CSU.Clicked += ToCSU;
+
+            // Set properties for desired design
+            buttonGroup.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            buttonGroup.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            buttonGroup.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            // Add views to hierarchy
+            buttonGroup.Children.Add(CSFS, 0, 0);
+            buttonGroup.Children.Add(CSU, 1, 0);
+
+            return buttonGroup;
+        }
+
         // NAVIGATION: GENERAL
 
         public async void ToPreviousPage(object sender, EventArgs e)
@@ -189,6 +213,16 @@ namespace EAB.Helpers
         public async void ToOutcomeC(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new OutcomeCPage());
+        }
+
+        public async void ToCSFS(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HTMLPage("http://csfs.colostate.edu/"));
+        }
+
+        public async void ToCSU(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HTMLPage("http://www.colostate.edu/"));
         }
 
         // NAVIGATION: MORE INFO
