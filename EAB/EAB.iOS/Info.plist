@@ -53,5 +53,10 @@
 	</array>
 	<key>CFBundleShortVersionString</key>
 	<string></string>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoadsInWebContent</key>
+    <true/>
+  </dict>
 </dict>
 </plist>
