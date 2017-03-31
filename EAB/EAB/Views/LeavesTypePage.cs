@@ -23,12 +23,12 @@ namespace EAB
 
             // Construct title bar and add to grid layout
             AbsoluteLayout titleBarContainer = ConstructTitleBarContainer("This Might Be An Ash");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
             // Construct question and add to grid layout
             AbsoluteLayout questionContainer = ConstructQuestionContainer("What do the leaves look like?");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(60) });
             gridLayout.Children.Add(questionContainer, 0, 2);
 
             // Construct list of choices and add to grid layout

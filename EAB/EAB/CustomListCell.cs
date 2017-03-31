@@ -14,7 +14,7 @@ namespace EAB
             var title = new Label();
             var description = new Label();
             var arrow = new ImageButton() { Image = "arrow.png", BackgroundColor = Color.Transparent };
-            var cellLayout = new StackLayout() { BackgroundColor = Color.FromHex("88cececc"), Padding = 20, Margin = new Thickness(0, 10, 0, 10) };
+            var cellLayout = new StackLayout() { BackgroundColor = Color.FromHex("88cececc"), Padding = new Thickness(20, 10, 20, 10), Margin = new Thickness(0, 10, 0, 10) };
             Grid innerLayout = new Grid { ColumnSpacing = 20 };
 
             // Set Bindings

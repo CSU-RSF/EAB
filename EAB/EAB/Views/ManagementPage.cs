@@ -22,7 +22,7 @@ namespace EAB
 
             // Construct title bar and add to grid layout
             AbsoluteLayout titleBarContainer = ConstructTitleBarContainer("EAB Management");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
             // Construct paragraphs and add to grid layout

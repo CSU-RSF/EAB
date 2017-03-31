@@ -24,7 +24,7 @@ namespace EAB
 
             // Construct title bar and add to grid layout
             AbsoluteLayout titleBarContainer = ConstructTitleBarContainer("Probably Not an Ash");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
            
@@ -86,7 +86,7 @@ namespace EAB
 
             // Construct title bar and add to grid layout
             AbsoluteLayout titleBarContainer = ConstructTitleBarContainer("Probably an Ash");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
 
@@ -147,7 +147,7 @@ namespace EAB
 
             // Construct title bar and add to grid layout
             AbsoluteLayout titleBarContainer = ConstructTitleBarContainer("An Ash?");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
 

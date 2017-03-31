@@ -83,7 +83,7 @@ namespace EAB.Helpers
             Image backgroundImage = new Image { Source = ImageSource.FromResource("EAB.Images.text_background_overlay.png"), Aspect = Aspect.AspectFill };
             absoluteLayout.Children.Add(backgroundImage, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
 
-            Label question = new Label { Text = titleText, FontSize = 30, HorizontalTextAlignment = TextAlignment.Center, TextColor = Color.White };
+            Label question = new Label { Text = titleText, FontSize = 25, HorizontalTextAlignment = TextAlignment.Center, TextColor = Color.White };
             AbsoluteLayout.SetLayoutBounds(question, new Rectangle(.5, .5, 1, .5));
             AbsoluteLayout.SetLayoutFlags(question, AbsoluteLayoutFlags.All);
             absoluteLayout.Children.Add(question);
@@ -117,7 +117,7 @@ namespace EAB.Helpers
         public ListView ConstructListView()
         {
             ListView listView = new ListView();
-            listView.RowHeight = 130;
+            listView.RowHeight = 110;
             listView.ItemTemplate = new DataTemplate(typeof(CustomListCell));
             return listView;
         }
