@@ -7,6 +7,7 @@ namespace EAB
 {
     public class HTMLPage : ViewHelpers
     {
+
         public HTMLPage(string location)
         {
             // Hide built-in navigation bar
@@ -24,6 +25,7 @@ namespace EAB
 
             // Generate WebView container
             var browser = new WebView();
+            var pdfBrowser = new CustomWebView { Uri = location, HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
             string htmlText;
 
             // Get file locally unless the location is a web address
@@ -31,7 +33,8 @@ namespace EAB
             {
                 htmlText = location;
                 browser.Source = htmlText;
-            } else
+            }
+            else if (!location.Contains(".pdf"))
             {
                 // Get file from PCL--in order for HTML files to be automatically pulled from the PCL, they need to be in a Views/HTML folder
                 var assembly = typeof(HTMLPage).GetTypeInfo().Assembly;
@@ -44,7 +47,8 @@ namespace EAB
             }
 
             // Add browser to grid layout
-            gridLayout.Children.Add(browser, 0, 1);
+            var output = (location.Contains(".pdf")) ? pdfBrowser : browser;
+            gridLayout.Children.Add(output, 0, 1);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
             // Add grid layout to absolute layout and assign to Content

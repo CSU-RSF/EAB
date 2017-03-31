@@ -220,17 +220,17 @@ namespace EAB.Helpers
 
         public async void ToEABManagementLink(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("https://www.colorado.gov/agplants/emerald-ash-borer"));
+            await Navigation.PushAsync(new HTMLPage("http://www.colorado.gov/agplants/emerald-ash-borer"));
         }
 
         public async void ToControlOptionsLink(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("http://bspm.agsci.colostate.edu/files/2014/02/EAB-control-options-February-11.pdf"));
+            await Navigation.PushAsync(new HTMLPage("EAB-control-options-February-11.pdf"));
         }
 
         public async void ToDangersLink(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("https://www.dontmovefirewood.org/"));
+            await Navigation.PushAsync(new HTMLPage("http://www.dontmovefirewood.org/"));
         }
 
     }
