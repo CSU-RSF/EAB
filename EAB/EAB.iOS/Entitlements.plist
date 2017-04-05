@@ -4,5 +4,7 @@
 <dict>
 	<key>application-identifier</key>
 	<string>PKZT8KX4WP.com.RSF.EABAsh</string>
+	<key>beta-reports-active</key>
+	<true/>
 </dict>
 </plist>
