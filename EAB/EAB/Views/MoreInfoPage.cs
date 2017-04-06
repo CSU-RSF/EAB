@@ -31,15 +31,15 @@ namespace EAB
             {
                 Text = "For Homeowners",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
-                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null),
+                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
             ForHomeownersButton.Clicked += ToHomeOwnersLink;
             
             Button EABManagmentButton = new Button
             {
-                Text = "EAB Management/Quarantine Colorado",
+                Text = "EAB Colorado",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
-                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null),
+                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
             EABManagmentButton.Clicked += ToEABManagementLink;
             
@@ -47,15 +47,15 @@ namespace EAB
             {
                 Text = "Control Options for EAB",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
-                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null),
+                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
             ControlOptionsButton.Clicked += ToControlOptionsLink;
             
             Button DangersButton = new Button
             {
-                Text = "Dangers of Moving Firewood and EAB",
+                Text = "Moving Firewood and EAB",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
-                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null),
+                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
             DangersButton.Clicked += ToDangersLink;
 
