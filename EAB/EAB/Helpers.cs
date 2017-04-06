@@ -118,6 +118,7 @@ namespace EAB.Helpers
         {
             ListView listView = new ListView();
             listView.RowHeight = 110;
+            listView.SeparatorVisibility = SeparatorVisibility.None;
             listView.ItemTemplate = new DataTemplate(typeof(CustomListCell));
             return listView;
         }
