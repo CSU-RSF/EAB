@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using EAB.Helpers;
 
 namespace EAB
 {
@@ -21,7 +20,6 @@ namespace EAB
         public CustomListCell()
         {
 
-            var helpers = new ViewHelpers();
             // Instantiate Views
             var image = new Image { Aspect = Aspect.AspectFill };
             var title = new Label();

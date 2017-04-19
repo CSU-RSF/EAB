@@ -87,6 +87,7 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-60%402x.png" />
