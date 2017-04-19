@@ -37,17 +37,17 @@ namespace EAB
             };
             Label paragraphTwo = new Label
             {
-                Text = "Check with a professional forester and arborist to be sure.",
+                Text = "Check with a professional forester or arborist to be sure.",
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
-            Button EABInfoButton = new Button
+            Button EABSymptomsAndManagementButton = new Button
             {
-                Text = "More EAB Info",
+                Text = "EAB Symptoms & Management",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
                 FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
-            EABInfoButton.Clicked += ToMoreEABInfo;
+            EABSymptomsAndManagementButton.Clicked += ToEABSymptomsAndManagement;
 
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
@@ -55,7 +55,7 @@ namespace EAB
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
-            paragraphText.Children.Add(EABInfoButton);
+            paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(paragraphText, 0, 2);
@@ -103,13 +103,13 @@ namespace EAB
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
-            Button EABInfoButton = new Button
+            Button EABSymptomsAndManagementButton = new Button
             {
-                Text = "More EAB Info",
+                Text = "EAB Symptoms & Management",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
                 FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
-            EABInfoButton.Clicked += ToMoreEABInfo;
+            EABSymptomsAndManagementButton.Clicked += ToEABSymptomsAndManagement;
 
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
@@ -117,7 +117,7 @@ namespace EAB
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
-            paragraphText.Children.Add(EABInfoButton);
+            paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(paragraphText, 0, 2);
@@ -160,17 +160,17 @@ namespace EAB
             };
             Label paragraphTwo = new Label
             {
-                Text = "Check with a professional forester and arborist, or wait until leaves are on the tree and then re-assess.",
+                Text = "Check with a professional forester or arborist, or wait until leaves are on the tree and then re-assess.",
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
-            Button EABInfoButton = new Button
+            Button EABSymptomsAndManagementButton = new Button
             {
-                Text = "More EAB Info",
+                Text = "EAB Symptoms & Management",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
                 FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };
-            EABInfoButton.Clicked += ToMoreEABInfo;
+            EABSymptomsAndManagementButton.Clicked += ToEABSymptomsAndManagement;
 
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
@@ -178,7 +178,69 @@ namespace EAB
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
-            paragraphText.Children.Add(EABInfoButton);
+            paragraphText.Children.Add(EABSymptomsAndManagementButton);
+            paragraphText.Children.Add(buttonGroup);
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            gridLayout.Children.Add(paragraphText, 0, 2);
+
+            // Add grid layout to absolute layout and assign to Content
+            pageLayout.Children.Add(gridLayout, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
+            Content = pageLayout;
+        }
+    }
+
+    // This outcome is only for when coming from the "less than 12 inches" option on the TrunkWidthPage
+    public partial class OutcomeC2Page : ViewHelpers
+    {
+        public OutcomeC2Page()
+        {
+            // Hide built-in navigation bar
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            // Construct outer page container and internal grid
+            AbsoluteLayout pageLayout = ConstructPageContainer();
+            Grid gridLayout = new Grid { RowSpacing = 20 };
+            gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            // Construct navigation bar and add to grid layout
+            Grid navigationBar = ConstructNavigationBar();
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
+            gridLayout.Children.Add(navigationBar, 0, 0);
+
+            // Construct title bar and add to grid layout
+            AbsoluteLayout titleBarContainer = ConstructTitleBarContainer("An Ash?");
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
+            gridLayout.Children.Add(titleBarContainer, 0, 1);
+
+
+            // Construct paragraphs and add to grid layout
+            Label paragraphOne = new Label
+            {
+                Text = "This could be an ash.",
+                FontSize = 17,
+                FontFamily = Device.OnPlatform("Arimo-Bold", "Arimo-Bold.ttf#Arimo-Bold", null)
+            };
+            Label paragraphTwo = new Label
+            {
+                Text = "Check with a professional forester or arborist.",
+                FontSize = 17,
+                FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
+            };
+            Button EABSymptomsAndManagementButton = new Button
+            {
+                Text = "EAB Symptoms & Management",
+                Style = Application.Current.Resources["semiTransparentButton"] as Style,
+                FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
+            };
+            EABSymptomsAndManagementButton.Clicked += ToEABSymptomsAndManagement;
+
+            // Add CSFS and CSU buttons/links
+            Grid buttonGroup = ConstructButtonGroup();
+
+            StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
+            paragraphText.Children.Add(paragraphOne);
+            paragraphText.Children.Add(paragraphTwo);
+            paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(paragraphText, 0, 2);

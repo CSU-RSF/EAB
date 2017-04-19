@@ -28,7 +28,7 @@ namespace EAB
             // Construct paragraphs and add to grid layout
             Label paragraphOne = new Label
             {
-                Text = "Emerald ash borer (EBA) attacks and kills all true native North American ash trees, including green, white, black and blue ash, including cultivars like \"autumn purple ash\", a popular white ash varietal in Colorado.",
+                Text = "Emerald ash borer (EAB) attacks and kills all true native North American ash trees, including green, white, black and blue ash, and including cultivars like \"autumn purple ash\", a popular white ash varietal in Colorado.",
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };

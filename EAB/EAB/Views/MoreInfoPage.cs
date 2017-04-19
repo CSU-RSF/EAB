@@ -37,7 +37,7 @@ namespace EAB
             
             Button EABManagmentButton = new Button
             {
-                Text = "EAB Colorado",
+                Text = "EAB Management/Quarantine",
                 Style = Application.Current.Resources["semiTransparentButton"] as Style,
                 FontFamily = Device.OnPlatform("Montserrat-Light", "Montserrat-Light.ttf#Montserrat-Light", null)
             };

@@ -34,7 +34,7 @@ namespace EAB
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
             Command greaterThanCommand = new Command(async () => { await Navigation.PushAsync(new DiamondShapedBarkPage()); });
-            Command lessThanCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeCPage()); });
+            Command lessThanCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeC2Page()); });
             questionChoices.Add(new QuestionModel() { Text = "Greater than 12\"", FileName = "greater_than_twelve_inches.jpg", NavigationCommand = greaterThanCommand });
             questionChoices.Add(new QuestionModel() { Text = "Less than 12\"", FileName = "less_than_twelve_inches.jpg", NavigationCommand = lessThanCommand });
             listView.ItemsSource = questionChoices;
