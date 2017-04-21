@@ -50,6 +50,9 @@ namespace EAB
                 FontFamily = Device.OnPlatform("Arimo-Italic", "Arimo-Italic.ttf#Arimo-Italic", null),
                 FontSize = 17
             };
+            // Add CSFS and CSU buttons/links
+            Grid buttonGroup = ConstructButtonGroup();
+
             ScrollView paragraphContainer = new ScrollView();
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(image);
@@ -57,6 +60,7 @@ namespace EAB
             paragraphText.Children.Add(paragraphTwo);
             paragraphText.Children.Add(paragraphThree);
             paragraphText.Children.Add(paragraphFour);
+            paragraphText.Children.Add(buttonGroup);
             paragraphContainer.Content = paragraphText;
 
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });

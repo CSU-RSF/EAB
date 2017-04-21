@@ -61,8 +61,20 @@
 	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
+    <key>NSExceptionDomains</key>
+    <dict>
+      <key>www.colorado.gov</key>
+      <dict>
+        <key>NSExceptionMinimumTLSVersion</key>
+        <string>TLSv1.0</string>
+        <key>NSExceptionRequiresForwardSecrecy</key>
+        <false/>
+        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+      </dict>
+    </dict>
 	</dict>
 	<key>CFBundleName</key>
 	<string>EAB/Ash Tree ID</string>

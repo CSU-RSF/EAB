@@ -218,12 +218,12 @@ namespace EAB.Helpers
 
         public async void ToCSFS(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("http://csfs.colostate.edu/"));
+            await Navigation.PushAsync(new HTMLPage("https://csfs.colostate.edu/"));
         }
 
         public async void ToCSU(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("http://www.colostate.edu/"));
+            await Navigation.PushAsync(new HTMLPage("https://www.colostate.edu/"));
         }
 
         // NAVIGATION: MORE INFO
@@ -250,12 +250,12 @@ namespace EAB.Helpers
 
         public async void ToHomeOwnersLink(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("http://csfs.colostate.edu/forest-management/emerald-ash-borer/"));
+            await Navigation.PushAsync(new HTMLPage("https://csfs.colostate.edu/forest-management/emerald-ash-borer/"));
         }
 
         public async void ToEABManagementLink(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("http://www.colorado.gov/agplants/emerald-ash-borer"));
+            await Navigation.PushAsync(new HTMLPage("https://www.colorado.gov/agplants/emerald-ash-borer"));
         }
 
         public async void ToControlOptionsLink(object sender, EventArgs e)
@@ -265,7 +265,7 @@ namespace EAB.Helpers
 
         public async void ToDangersLink(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("http://www.dontmovefirewood.org/"));
+            await Navigation.PushAsync(new HTMLPage("https://www.dontmovefirewood.org/"));
         }
 
     }
