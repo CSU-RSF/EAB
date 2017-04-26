@@ -223,7 +223,7 @@ namespace EAB.Helpers
 
         public async void ToCSU(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HTMLPage("https://www.colostate.edu/"));
+            await Navigation.PushAsync(new HTMLPage("https://extension.colostate.edu/"));
         }
 
         // NAVIGATION: MORE INFO
