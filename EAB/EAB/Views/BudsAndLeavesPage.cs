@@ -27,8 +27,8 @@ namespace EAB
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
             // Construct question and add to grid layout
-            AbsoluteLayout questionContainer = ConstructQuestionContainer("How are the buds (on smaller branches) arranged?");
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(90) });
+            AbsoluteLayout questionContainer = ConstructQuestionContainer("How are the buds and the smallest branches arranged? (Look very carefully)");
+            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(120) });
             gridLayout.Children.Add(questionContainer, 0, 2);
 
             // Construct list of choices and add to grid layout
