@@ -12,7 +12,7 @@ namespace EAB
         public ImageSource Thumbnail {
             get { return ImageSource.FromResource(string.Format("EAB.Images.{0}", FileName)); }
         }
-
+       
         public ImageSource Arrow
         {
             get { return ImageSource.FromResource("EAB.Images.arrow.png"); }

@@ -27,7 +27,7 @@ namespace EAB
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
             // Construct question and add to grid layout
-            AbsoluteLayout questionContainer = ConstructQuestionContainer("Is the tree an evergreen or deciduous?");
+            AbsoluteLayout questionContainer = ConstructQuestionContainer("Does the tree have needles or leaves?");
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
             gridLayout.Children.Add(questionContainer, 0, 2);
 
@@ -35,8 +35,8 @@ namespace EAB
             ListView listView = ConstructListView();
             Command evergreenCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
             Command deciduousCommand = new Command(async () => { await Navigation.PushAsync(new BudsAndLeavesPage()); });
-            questionChoices.Add(new QuestionModel() { Text = "Evergreen", Detail = "Needles stay on year-round", FileName = "evergreen.jpg", NavigationCommand = evergreenCommand });
-            questionChoices.Add(new QuestionModel() { Text = "Deciduous", Detail = "Leaves drop in fall", FileName = "deciduous.jpg", NavigationCommand = deciduousCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Needles", Detail = "An evergreen tree", FileName = "evergreen.jpg", NavigationCommand = evergreenCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Leaves", Detail = "Deciduous; leaves drop in fall", FileName = "deciduous.jpg", NavigationCommand = deciduousCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);

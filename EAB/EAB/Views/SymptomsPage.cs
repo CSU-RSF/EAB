@@ -47,11 +47,21 @@ namespace EAB
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
 
+            Image serpentineTunnels = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.serpentine_tunnels.jpg")
+            };
+
             Label bulletThree = new Label
             {
                 Text = "\u2022 D-shaped exit holes 1/8-inch wide",
                 FontSize = 18,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
+            };
+
+            Image dShapedExitHole = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.d_shaped_exit_hole.jpg")
             };
 
             Label bulletFour = new Label
@@ -117,7 +127,9 @@ namespace EAB
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(bulletOne);
             paragraphText.Children.Add(bulletTwo);
+            paragraphText.Children.Add(serpentineTunnels);
             paragraphText.Children.Add(bulletThree);
+            paragraphText.Children.Add(dShapedExitHole);
             paragraphText.Children.Add(bulletFour);
             paragraphText.Children.Add(bulletFive);
             paragraphText.Children.Add(bulletSix);

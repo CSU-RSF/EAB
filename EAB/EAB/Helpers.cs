@@ -114,12 +114,19 @@ namespace EAB.Helpers
 
         // ListView
         public ObservableCollection<QuestionModel> questionChoices = new ObservableCollection<QuestionModel>();
-        public ListView ConstructListView()
+        public ListView ConstructListView(bool twoImages = false)
         {
             ListView listView = new ListView();
             listView.RowHeight = 110;
             listView.SeparatorVisibility = SeparatorVisibility.None;
-            listView.ItemTemplate = new DataTemplate(typeof(CustomListCell));
+            if (twoImages)
+            {
+                listView.ItemTemplate = new DataTemplate(typeof(CustomTwoImageListCell));
+            }
+            else
+            {
+                listView.ItemTemplate = new DataTemplate(typeof(CustomListCell));
+            }
             return listView;
         }
 

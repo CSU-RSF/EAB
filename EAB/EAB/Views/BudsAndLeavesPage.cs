@@ -27,12 +27,12 @@ namespace EAB
             gridLayout.Children.Add(titleBarContainer, 0, 1);
 
             // Construct question and add to grid layout
-            AbsoluteLayout questionContainer = ConstructQuestionContainer("How are the buds and the smallest branches arranged? (Look very carefully)");
+            AbsoluteLayout questionContainer = ConstructQuestionContainer("How are the buds and smallest branches arranged? Examine them up close, for multiple examples.");
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(120) });
             gridLayout.Children.Add(questionContainer, 0, 2);
 
             // Construct list of choices and add to grid layout
-            ListView listView = ConstructListView();
+            ListView listView = ConstructListView(true);
             Command oppositeCommand = new Command(async () => { await Navigation.PushAsync(new LeavesTypePage()); });
             Command alternatingCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
             questionChoices.Add(new QuestionModel() { Text = "Opposite", FileName = "opposite.jpg", NavigationCommand = oppositeCommand });

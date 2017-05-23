@@ -40,6 +40,11 @@ namespace EAB
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
 
+            Image larvaeAndAdult = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.larvae_and_adult.jpg")
+            };
+
             Button EABSymptoms = new Button
             {
                 Text = "EAB Symptoms",
@@ -75,6 +80,7 @@ namespace EAB
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
+            paragraphText.Children.Add(larvaeAndAdult);
             paragraphText.Children.Add(EABSymptoms);
             paragraphText.Children.Add(EABManagement);
             paragraphText.Children.Add(EABInfoButton);
