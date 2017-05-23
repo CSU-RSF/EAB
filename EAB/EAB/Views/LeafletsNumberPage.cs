@@ -39,6 +39,7 @@ namespace EAB
             questionChoices.Add(new QuestionModel() { Text = "3 Leaflets", FileName = "three_leaflets.jpg", NavigationCommand = threeCommand });
             questionChoices.Add(new QuestionModel() { Text = "5 Leaflets", FileName = "five_leaflets.jpg", NavigationCommand = fiveCommand });
             questionChoices.Add(new QuestionModel() { Text = "6-11 Leaflets", FileName = "six_to_eleven_leaflets.jpg", NavigationCommand = sixToElevenCommand });
+            questionChoices.Add(new QuestionModel() { Text = "I'm Not Sure", FileName = "question_mark.jpg", NavigationCommand = fiveCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);

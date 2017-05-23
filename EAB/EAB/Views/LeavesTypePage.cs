@@ -38,7 +38,8 @@ namespace EAB
             Command noLeavesCommand = new Command(async () => { await Navigation.PushAsync(new TrunkWidthPage()); });
             questionChoices.Add(new QuestionModel() { Text = "Compound", Detail = "Multiple leaflets per stalk", FileName = "compound.jpg", NavigationCommand = compoundCommand });
             questionChoices.Add(new QuestionModel() { Text = "Simple", Detail = "Only one leaf per stalk", FileName = "simple.jpg", NavigationCommand = simpleCommand });
-            questionChoices.Add(new QuestionModel() { Text = "It's winter", Detail = "There are no leaves on the tree!", FileName = "winter.jpg", NavigationCommand = noLeavesCommand });
+            questionChoices.Add(new QuestionModel() { Text = "It's Winter", Detail = "There are no leaves on the tree!", FileName = "winter.jpg", NavigationCommand = noLeavesCommand });
+            questionChoices.Add(new QuestionModel() { Text = "I'm Not Sure", FileName = "question_mark.jpg", NavigationCommand = noLeavesCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);
