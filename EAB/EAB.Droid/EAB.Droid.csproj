@@ -21,8 +21,11 @@
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
-    <JavaMaximumHeapSize />
-    <JavaOptions />
+        <AndroidDesignerJavaRendererMinMemory>256m</AndroidDesignerJavaRendererMinMemory>
+        <AndroidDesignerJavaRendererMaxMemory>1g</AndroidDesignerJavaRendererMaxMemory>
+        <AndroidDesignerJavaRendererPermSize>350m</AndroidDesignerJavaRendererPermSize>
+    <JavaOptions>-Xmx1g</JavaOptions>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -44,6 +47,11 @@
     <EnableLLVM>False</EnableLLVM>
     <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
     <EnableProguard>False</EnableProguard>
+        <AndroidDesignerJavaRendererMinMemory>256m</AndroidDesignerJavaRendererMinMemory>
+        <AndroidDesignerJavaRendererMaxMemory>1g</AndroidDesignerJavaRendererMaxMemory>
+        <AndroidDesignerJavaRendererPermSize>350m</AndroidDesignerJavaRendererPermSize>
+    <JavaOptions>-Xmx1g</JavaOptions>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -63,6 +71,11 @@
     <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
     <EnableProguard>False</EnableProguard>
     <DebugSymbols>False</DebugSymbols>
+        <AndroidDesignerJavaRendererMinMemory>256m</AndroidDesignerJavaRendererMinMemory>
+        <AndroidDesignerJavaRendererMaxMemory>1g</AndroidDesignerJavaRendererMaxMemory>
+        <AndroidDesignerJavaRendererPermSize>350m</AndroidDesignerJavaRendererPermSize>
+    <JavaOptions>-Xmx1g</JavaOptions>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
