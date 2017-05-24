@@ -34,11 +34,14 @@ namespace EAB
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
             Command threeCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
+            Command threeImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("three_leaflets_big.jpg")); });
             Command fiveCommand = new Command(async () => { await Navigation.PushAsync(new TrunkWidthPage()); });
+            Command fiveImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("five_leaflets_big.jpg")); });
             Command sixToElevenCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeBPage()); });
-            questionChoices.Add(new QuestionModel() { Text = "3 Leaflets", FileName = "three_leaflets.jpg", NavigationCommand = threeCommand });
-            questionChoices.Add(new QuestionModel() { Text = "5 Leaflets", FileName = "five_leaflets.jpg", NavigationCommand = fiveCommand });
-            questionChoices.Add(new QuestionModel() { Text = "6-11 Leaflets", FileName = "six_to_eleven_leaflets.jpg", NavigationCommand = sixToElevenCommand });
+            Command sixToElevenImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("six_to_eleven_leaflets_big.jpg")); });
+            questionChoices.Add(new QuestionModel() { Text = "3 Leaflets", FileName = "three_leaflets.jpg", ImageCommand = threeImageCommand, NavigationCommand = threeCommand });
+            questionChoices.Add(new QuestionModel() { Text = "5 Leaflets", FileName = "five_leaflets.jpg", ImageCommand = fiveImageCommand, NavigationCommand = fiveCommand });
+            questionChoices.Add(new QuestionModel() { Text = "6-11 Leaflets", FileName = "six_to_eleven_leaflets.jpg", ImageCommand = sixToElevenImageCommand, NavigationCommand = sixToElevenCommand });
             questionChoices.Add(new QuestionModel() { Text = "I'm Not Sure", FileName = "question_mark.jpg", NavigationCommand = fiveCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });

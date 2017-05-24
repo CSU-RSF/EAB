@@ -9,6 +9,7 @@ namespace EAB
         public string Detail { get; set; }
         public string FileName { get; set; }
         public ICommand NavigationCommand { get; set; }
+        public ICommand ImageCommand { get; set; }
         public ImageSource Thumbnail {
             get { return ImageSource.FromResource(string.Format("EAB.Images.{0}", FileName)); }
         }

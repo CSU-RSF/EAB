@@ -34,9 +34,11 @@ namespace EAB
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
             Command greaterThanCommand = new Command(async () => { await Navigation.PushAsync(new DiamondShapedBarkPage()); });
+            Command greaterThanImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("greater_than_twelve_inches.jpg")); });
             Command lessThanCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeC2Page()); });
-            questionChoices.Add(new QuestionModel() { Text = "Greater than 12\"", FileName = "greater_than_twelve_inches.jpg", NavigationCommand = greaterThanCommand });
-            questionChoices.Add(new QuestionModel() { Text = "Less than 12\"", FileName = "less_than_twelve_inches.jpg", NavigationCommand = lessThanCommand });
+            Command lessThanImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("less_than_twelve_inches.jpg")); });
+            questionChoices.Add(new QuestionModel() { Text = "Greater than 12\"", FileName = "greater_than_twelve_inches.jpg", ImageCommand = greaterThanImageCommand, NavigationCommand = greaterThanCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Less than 12\"", FileName = "less_than_twelve_inches.jpg", ImageCommand = lessThanImageCommand, NavigationCommand = lessThanCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);

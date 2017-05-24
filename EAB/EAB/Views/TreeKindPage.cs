@@ -34,9 +34,11 @@ namespace EAB
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
             Command evergreenCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
+            Command evergreenImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("evergreen_big.jpg")); });
             Command deciduousCommand = new Command(async () => { await Navigation.PushAsync(new BudsAndLeavesPage()); });
-            questionChoices.Add(new QuestionModel() { Text = "Needles", Detail = "An evergreen tree", FileName = "evergreen.jpg", NavigationCommand = evergreenCommand });
-            questionChoices.Add(new QuestionModel() { Text = "Leaves", Detail = "Deciduous; leaves drop in fall", FileName = "deciduous.jpg", NavigationCommand = deciduousCommand });
+            Command deciduousImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("deciduous_big.jpg")); });
+            questionChoices.Add(new QuestionModel() { Text = "Needles", Detail = "An evergreen tree", FileName = "evergreen.jpg", ImageCommand = evergreenImageCommand, NavigationCommand = evergreenCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Leaves", Detail = "Deciduous; leaves drop in fall", FileName = "deciduous.jpg", ImageCommand = deciduousImageCommand, NavigationCommand = deciduousCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);

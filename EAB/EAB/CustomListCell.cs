@@ -9,12 +9,19 @@ namespace EAB
     // Couldn't find a way to allow for variation in image sizes, so went with two custom cells, one for regular items and the other for ones with two images
     public class CustomListCell : ViewCell
     {
-        public static BindableProperty CommandProperty = BindableProperty.Create<CustomListCell, ICommand>(x => x.Command, null);
+        public static BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(CustomListCell), null);
+        public static BindableProperty ImageCommandProperty = BindableProperty.Create(nameof(ImageCommand), typeof(ICommand), typeof(CustomListCell), null);
 
         public ICommand Command
         {
             get { return (ICommand)GetValue(CommandProperty); }
             set { SetValue(CommandProperty, value); }
+        }
+
+        public ICommand ImageCommand
+        {
+            get { return (ICommand)GetValue(ImageCommandProperty); }
+            set { SetValue(ImageCommandProperty, value); }
         }
 
         public Task Navigation { get; private set; }
@@ -43,8 +50,20 @@ namespace EAB
                 }
             };
 
+            // Add gesture recognizer for images
+            var imageGestureRecognizer = new TapGestureRecognizer();
+            imageGestureRecognizer.Tapped += (s, e) =>
+            {
+                if (ImageCommand != null && ImageCommand.CanExecute(null))
+                {
+                    ImageCommand.Execute(null);
+                }
+            };
+
             // Set Bindings
             image.SetBinding(Image.SourceProperty, new Binding("Thumbnail"));
+            SetBinding(ImageCommandProperty, new Binding("ImageCommand"));
+            image.GestureRecognizers.Add(imageGestureRecognizer);
             title.SetBinding(Label.TextProperty, new Binding("Text"));
             description.SetBinding(Label.TextProperty, new Binding("Detail"));
             SetBinding(CommandProperty, new Binding("NavigationCommand"));
@@ -78,7 +97,8 @@ namespace EAB
 
     public class CustomTwoImageListCell : ViewCell
     {
-        public static BindableProperty CommandProperty = BindableProperty.Create<CustomListCell, ICommand>(x => x.Command, null);
+        public static BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(CustomListCell), null);
+        public static BindableProperty ImageCommandProperty = BindableProperty.Create(nameof(ImageCommand), typeof(ICommand), typeof(CustomListCell), null);
 
         public ICommand Command
         {
@@ -86,7 +106,11 @@ namespace EAB
             set { SetValue(CommandProperty, value); }
         }
 
-        public Task Navigation { get; private set; }
+        public ICommand ImageCommand
+        {
+            get { return (ICommand)GetValue(ImageCommandProperty); }
+            set { SetValue(ImageCommandProperty, value); }
+        }
 
         public CustomTwoImageListCell()
         {
@@ -113,8 +137,20 @@ namespace EAB
                 }
             };
 
+            // Add gesture recognizer for images
+            var imageGestureRecognizer = new TapGestureRecognizer();
+            imageGestureRecognizer.Tapped += (s, e) =>
+            {
+                if (ImageCommand != null && ImageCommand.CanExecute(null))
+                {
+                    ImageCommand.Execute(null);
+                }
+            };
+
             // Set Bindings
             image.SetBinding(Image.SourceProperty, new Binding("Thumbnail"));
+            SetBinding(ImageCommandProperty, new Binding("ImageCommand"));
+            image.GestureRecognizers.Add(imageGestureRecognizer);
             title.SetBinding(Label.TextProperty, new Binding("Text"));
             description.SetBinding(Label.TextProperty, new Binding("Detail"));
             SetBinding(CommandProperty, new Binding("NavigationCommand"));

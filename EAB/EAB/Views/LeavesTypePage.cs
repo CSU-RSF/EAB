@@ -34,10 +34,12 @@ namespace EAB
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
             Command compoundCommand = new Command(async () => { await Navigation.PushAsync(new LeafletsShapePage()); });
+            Command compoundImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("six_to_eleven_leaflets_big.jpg")); });
             Command simpleCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
+            Command simpleImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("simple_big.jpg")); });
             Command noLeavesCommand = new Command(async () => { await Navigation.PushAsync(new TrunkWidthPage()); });
-            questionChoices.Add(new QuestionModel() { Text = "Compound", Detail = "Multiple leaflets per stalk", FileName = "compound.jpg", NavigationCommand = compoundCommand });
-            questionChoices.Add(new QuestionModel() { Text = "Simple", Detail = "Only one leaf per stalk", FileName = "simple.jpg", NavigationCommand = simpleCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Compound", Detail = "Multiple leaflets per stalk", FileName = "compound.jpg", ImageCommand = compoundImageCommand, NavigationCommand = compoundCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Simple", Detail = "Only one leaf per stalk", FileName = "simple.jpg", ImageCommand = simpleImageCommand, NavigationCommand = simpleCommand });
             questionChoices.Add(new QuestionModel() { Text = "It's Winter", Detail = "There are no leaves on the tree!", FileName = "winter.jpg", NavigationCommand = noLeavesCommand });
             questionChoices.Add(new QuestionModel() { Text = "I'm Not Sure", FileName = "question_mark.jpg", NavigationCommand = noLeavesCommand });
             listView.ItemsSource = questionChoices;

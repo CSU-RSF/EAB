@@ -44,6 +44,7 @@
     <Compile Include="Helpers.cs" />
     <Compile Include="QuestionModel.cs" />
     <Compile Include="Views\HTMLPage.cs" />
+    <Compile Include="Views\ImageModal.cs" />
     <Compile Include="Views\WelcomePage.cs" />
     <Compile Include="Views\MoreInfoPage.cs" />
     <Compile Include="Views\ManagementPage.cs" />
@@ -167,6 +168,25 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\question_mark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\deciduous_big.jpg" />
+    <EmbeddedResource Include="Images\evergreen_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\five_leaflets_big.jpg" />
+    <EmbeddedResource Include="Images\six_to_eleven_leaflets_big.jpg" />
+    <EmbeddedResource Include="Images\three_leaflets_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\leaflets_emerge_big.jpg" />
+    <EmbeddedResource Include="Images\leaflets_radiate_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\simple_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\diamond_shaped_big.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

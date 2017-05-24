@@ -32,7 +32,7 @@ namespace EAB
             gridLayout.Children.Add(questionContainer, 0, 2);
 
             // Get image and add to grid layout
-            Image image = new Image { Source = ImageSource.FromResource("EAB.Images.diamond_shaped.jpg") };
+            Image image = new Image { Source = ImageSource.FromResource("EAB.Images.diamond_shaped.jpg"), Aspect = Aspect.AspectFit };
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
             gridLayout.Children.Add(image, 0, 3);
 

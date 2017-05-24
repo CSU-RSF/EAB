@@ -33,10 +33,12 @@ namespace EAB
 
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
-            Command onePointCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
-            Command featherCommand = new Command(async () => { await Navigation.PushAsync(new LeafletsNumberPage()); });
-            questionChoices.Add(new QuestionModel() { Text = "Leaflets radiate off one point", FileName = "leaflets_radiate.jpg", NavigationCommand = onePointCommand });
-            questionChoices.Add(new QuestionModel() { Text = "Emerge from separate, opposite points", FileName = "leaflets_emerge.jpg", NavigationCommand = featherCommand });
+            Command radiateCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
+            Command radiateImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("leaflets_radiate_big.jpg")); });
+            Command emergeCommand = new Command(async () => { await Navigation.PushAsync(new LeafletsNumberPage()); });
+            Command emergeImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("leaflets_emerge_big.jpg")); });
+            questionChoices.Add(new QuestionModel() { Text = "Leaflets radiate off one point", FileName = "leaflets_radiate.jpg", ImageCommand = radiateImageCommand, NavigationCommand = radiateCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Emerge from separate, opposite points", FileName = "leaflets_emerge.jpg", ImageCommand = emergeImageCommand, NavigationCommand = emergeCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);

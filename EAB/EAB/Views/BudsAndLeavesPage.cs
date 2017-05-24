@@ -34,9 +34,11 @@ namespace EAB
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView(true);
             Command oppositeCommand = new Command(async () => { await Navigation.PushAsync(new LeavesTypePage()); });
+            Command oppositeImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("opposite.jpg")); });
             Command alternatingCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
-            questionChoices.Add(new QuestionModel() { Text = "Opposite", FileName = "opposite.jpg", NavigationCommand = oppositeCommand });
-            questionChoices.Add(new QuestionModel() { Text = "Alternating", FileName = "alternating.jpg", NavigationCommand = alternatingCommand });
+            Command alternatingImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("alternating.jpg")); });
+            questionChoices.Add(new QuestionModel() { Text = "Opposite", FileName = "opposite.jpg", ImageCommand = oppositeImageCommand, NavigationCommand = oppositeCommand });
+            questionChoices.Add(new QuestionModel() { Text = "Alternating", FileName = "alternating.jpg", ImageCommand = alternatingImageCommand, NavigationCommand = alternatingCommand });
             listView.ItemsSource = questionChoices;
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridLayout.Children.Add(listView, 0, 3);

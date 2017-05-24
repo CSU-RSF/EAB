@@ -1,10 +1,12 @@
 ﻿using Xamarin.Forms;
 using EAB.Helpers;
+using System;
 
 namespace EAB
 {
     public class WelcomePage : ViewHelpers
     {
+
         public WelcomePage()
         {
 
