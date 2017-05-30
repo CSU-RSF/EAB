@@ -157,7 +157,7 @@ namespace EAB
             cellLayout.GestureRecognizers.Add(gestureRecognizer);
 
             // Set properties for desired design
-            cellLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) });
+            cellLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
             cellLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             cellLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(40) });
             cellLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(80) });
