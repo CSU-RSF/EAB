@@ -45,6 +45,7 @@
     <Compile Include="QuestionModel.cs" />
     <Compile Include="Views\HTMLPage.cs" />
     <Compile Include="Views\ImageModal.cs" />
+    <Compile Include="Views\ShapeOfSingleLeafletPage.cs" />
     <Compile Include="Views\WelcomePage.cs" />
     <Compile Include="Views\MoreInfoPage.cs" />
     <Compile Include="Views\ManagementPage.cs" />
@@ -151,9 +152,6 @@
     <EmbeddedResource Include="Images\csu_extension.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\HTML\Introduction.html" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -184,6 +182,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\simple_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\LeafNumber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\branch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\diamond_bark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\leaf_edge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\oak_leaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\mapleoak.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

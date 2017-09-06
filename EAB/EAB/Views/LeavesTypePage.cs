@@ -33,7 +33,7 @@ namespace EAB
 
             // Construct list of choices and add to grid layout
             ListView listView = ConstructListView();
-            Command compoundCommand = new Command(async () => { await Navigation.PushAsync(new LeafletsShapePage()); });
+            Command compoundCommand = new Command(async () => { await Navigation.PushAsync(new ShapeOfSingleLeafletPage()); });
             Command compoundImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("six_to_eleven_leaflets_big.jpg")); });
             Command simpleCommand = new Command(async () => { await Navigation.PushAsync(new OutcomeAPage()); });
             Command simpleImageCommand = new Command(async () => { await Navigation.PushModalAsync(new ImageModal("simple_big.jpg")); });

@@ -41,6 +41,10 @@ namespace EAB
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
+
+            StackLayout outcomeInfo = ConstructOutcomeInfoGroup();
+
+
             Button EABSymptomsAndManagementButton = new Button
             {
                 Text = "EAB Symptoms & Management",
@@ -51,14 +55,17 @@ namespace EAB
 
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
-
+            ScrollView outcomeInfoScroll = new ScrollView();
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
+            paragraphText.Children.Add(outcomeInfo);
             paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            gridLayout.Children.Add(paragraphText, 0, 2);
+
+            outcomeInfoScroll.Content = paragraphText;
+            gridLayout.Children.Add(outcomeInfoScroll, 0, 2);
 
             // Add grid layout to absolute layout and assign to Content
             pageLayout.Children.Add(gridLayout, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
@@ -103,6 +110,9 @@ namespace EAB
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
+
+            StackLayout outcomeInfo = ConstructOutcomeInfoGroup();
+
             Button EABSymptomsAndManagementButton = new Button
             {
                 Text = "EAB Symptoms & Management",
@@ -114,13 +124,16 @@ namespace EAB
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
 
+            ScrollView outcomeInfoScroll = new ScrollView();
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
+            paragraphText.Children.Add(outcomeInfo); 
             paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            gridLayout.Children.Add(paragraphText, 0, 2);
+            outcomeInfoScroll.Content = paragraphText;
+            gridLayout.Children.Add(outcomeInfoScroll, 0, 2);
 
             // Add grid layout to absolute layout and assign to Content
             pageLayout.Children.Add(gridLayout, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
@@ -164,6 +177,9 @@ namespace EAB
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
+
+            StackLayout outcomeInfo = ConstructOutcomeInfoGroup();
+
             Button EABSymptomsAndManagementButton = new Button
             {
                 Text = "EAB Symptoms & Management",
@@ -175,13 +191,16 @@ namespace EAB
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
 
+            ScrollView outcomeInfoScroll = new ScrollView();
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
+            paragraphText.Children.Add(outcomeInfo);
             paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            gridLayout.Children.Add(paragraphText, 0, 2);
+            outcomeInfoScroll.Content = paragraphText;
+            gridLayout.Children.Add(outcomeInfoScroll, 0, 2);
 
             // Add grid layout to absolute layout and assign to Content
             pageLayout.Children.Add(gridLayout, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
@@ -226,6 +245,9 @@ namespace EAB
                 FontSize = 17,
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null)
             };
+
+            StackLayout outcomeInfo = ConstructOutcomeInfoGroup();
+
             Button EABSymptomsAndManagementButton = new Button
             {
                 Text = "EAB Symptoms & Management",
@@ -237,13 +259,16 @@ namespace EAB
             // Add CSFS and CSU buttons/links
             Grid buttonGroup = ConstructButtonGroup();
 
+            ScrollView outcomeInfoScroll = new ScrollView();
             StackLayout paragraphText = new StackLayout { Margin = new Thickness(20, 0, 20, 0) };
             paragraphText.Children.Add(paragraphOne);
             paragraphText.Children.Add(paragraphTwo);
+            paragraphText.Children.Add(outcomeInfo);
             paragraphText.Children.Add(EABSymptomsAndManagementButton);
             paragraphText.Children.Add(buttonGroup);
             gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            gridLayout.Children.Add(paragraphText, 0, 2);
+            outcomeInfoScroll.Content = paragraphText;
+            gridLayout.Children.Add(outcomeInfoScroll, 0, 2);
 
             // Add grid layout to absolute layout and assign to Content
             pageLayout.Children.Add(gridLayout, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);

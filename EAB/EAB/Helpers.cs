@@ -134,8 +134,8 @@ namespace EAB.Helpers
         public Grid ConstructButtonGroup()
         {
             // Create CSFS and CSU Buttons
-            var CSFS = new ImageButton() { Image = "csfs.png", BackgroundColor = Color.Transparent };
-            var CSU = new ImageButton() { Image = "csu_extension.png", BackgroundColor = Color.Transparent };
+            var CSFS = new ImageButton() { Image = "csfs.png", BackgroundColor = Color.Transparent, WidthRequest = 200 };
+            var CSU = new ImageButton() { Image = "csu_extension.png", BackgroundColor = Color.Transparent, WidthRequest = 200 };
             Grid buttonGroup = new Grid { ColumnSpacing = 20 };
 
             // Set navigation
@@ -152,6 +152,96 @@ namespace EAB.Helpers
             buttonGroup.Children.Add(CSU, 1, 0);
 
             return buttonGroup;
+        }
+
+        //contruct ash tree outcome information
+        public StackLayout ConstructOutcomeInfoGroup()
+        {
+            StackLayout outcomeLayout = new StackLayout();
+
+            Label heading = new Label
+            {
+                Text = "Ash trees have the following characteristics:",
+                FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
+                FontSize = 17,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+            outcomeLayout.Children.Add(heading);
+
+            Grid outcomeGrid = new Grid() { ColumnSpacing = 20, VerticalOptions = LayoutOptions.FillAndExpand };
+
+            //buttonGroup.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(20) });
+            outcomeGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            outcomeGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100)});
+            Label leafText = new Label
+            {
+                Text = "Compound leaves with 5-11 leaflets (Note that in Colorado, ash species typically have only 5-9 leaflets)",
+                FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
+                FontSize = 17,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+            Image leafNumberImage = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.LeafNumber.png")
+            };
+
+
+            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.Children.Add(leafText,1,0);
+            outcomeGrid.Children.Add(leafNumberImage, 2, 0);
+
+            Label branchText = new Label
+            {
+                Text = "Opposite buds and branches",
+                FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
+                FontSize = 17,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+            Image branchImage = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.branch.png")
+            };
+            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.Children.Add(branchText, 1, 1);
+            outcomeGrid.Children.Add(branchImage, 2, 1);
+
+
+            Label barkText = new Label
+            {
+                Text = "Diamond-shaped bark patterns on most of the mature (>12” trunk diameter) ash tree species seen in Colorado",
+                FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
+                FontSize = 17,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+            Image barkImage = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.diamond_bark.png")
+            };
+            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.Children.Add(barkText, 1, 2);
+            outcomeGrid.Children.Add(barkImage, 2, 2);
+            outcomeLayout.Children.Add(outcomeGrid);
+
+
+            Label leafEdgeText = new Label
+            {
+                Text = "Leaflet edges that are smooth or finely toothed",
+                FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
+                FontSize = 17,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+            Image leafEdgeImage = new Image
+            {
+                Source = ImageSource.FromResource("EAB.Images.leaf_edge.png")
+            };
+            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.Children.Add(leafEdgeText, 1, 3);
+            outcomeGrid.Children.Add(leafEdgeImage, 2, 3);
+            outcomeLayout.Children.Add(outcomeGrid);
+
+
+            return outcomeLayout;
         }
 
         // NAVIGATION: GENERAL
