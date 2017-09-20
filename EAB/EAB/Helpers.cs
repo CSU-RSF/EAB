@@ -178,9 +178,10 @@ namespace EAB.Helpers
             {
                 Text = "Compound leaves with 5-11 leaflets (Note that in Colorado, ash species typically have only 5-9 leaflets)",
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
-                FontSize = 17,
-                VerticalTextAlignment = TextAlignment.Center
-            };
+                FontSize = 14,
+                VerticalTextAlignment = TextAlignment.Center,
+                
+    };
             Image leafNumberImage = new Image
             {
                 Source = ImageSource.FromResource("EAB.Images.LeafNumber.png")
@@ -211,7 +212,7 @@ namespace EAB.Helpers
             {
                 Text = "Diamond-shaped bark patterns on most of the mature (>12” trunk diameter) ash tree species seen in Colorado",
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
-                FontSize = 17,
+                FontSize = 14,
                 VerticalTextAlignment = TextAlignment.Center
             };
             Image barkImage = new Image
