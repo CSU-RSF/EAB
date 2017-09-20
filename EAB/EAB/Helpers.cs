@@ -178,7 +178,8 @@ namespace EAB.Helpers
             {
                 Text = "Compound leaves with 5-11 leaflets (Note that in Colorado, ash species typically have only 5-9 leaflets)",
                 FontFamily = Device.OnPlatform("Arimo-Regular", "Arimo-Regular.ttf#Arimo-Regular", null),
-                FontSize = 14,
+                //FontSize = 14, 
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
                 VerticalTextAlignment = TextAlignment.Center,
                 
     };
@@ -188,7 +189,7 @@ namespace EAB.Helpers
             };
 
 
-            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(120) });
             outcomeGrid.Children.Add(leafText,1,0);
             outcomeGrid.Children.Add(leafNumberImage, 2, 0);
 
@@ -219,7 +220,7 @@ namespace EAB.Helpers
             {
                 Source = ImageSource.FromResource("EAB.Images.diamond_bark.png")
             };
-            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+            outcomeGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(120) });
             outcomeGrid.Children.Add(barkText, 1, 2);
             outcomeGrid.Children.Add(barkImage, 2, 2);
             outcomeLayout.Children.Add(outcomeGrid);
